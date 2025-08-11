@@ -116,9 +116,9 @@ def train(model: torch.nn.Module, train_dataloader: torch.utils.data.DataLoader,
               f"test_acc: {test_acc:.4f}")
 
         # Update the results dict
-        results["train_loss"].append(train_loss)
+        results["train_loss"].append(train_loss.detach().cpu() if isinstance(train_loss, torch.Tensor) else train_loss)
         results["train_acc"].append(train_acc)
-        results["test_loss"].append(test_loss)
+        results["test_loss"].append(test_loss.detach().cpu() if isinstance(test_loss, torch.Tensor) else test_loss)
         results["test_acc"].append(test_acc)
 
     return results
