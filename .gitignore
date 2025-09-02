@@ -211,4 +211,4 @@ anaconda_projects/
 conda/
 *.png
 
-c:\Users\ritis\Desktop\PyTorch-Learning\models\08_pretrained_vit_feature_extractor_pizza_steak_sushi.pth
+models/08_pretrained_vit_feature_extractor_pizza_steak_sushi.pth
