@@ -211,4 +211,5 @@ anaconda_projects/
 conda/
 *.png
 
+# Ignored due to size > 100 MB of github limits as it is 327 MB. Run the Paper replication notebook to get this model locally.
 models/08_pretrained_vit_feature_extractor_pizza_steak_sushi.pth
