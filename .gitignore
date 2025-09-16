@@ -217,3 +217,5 @@ models/08_pretrained_vit_feature_extractor_pizza_steak_sushi.pth
 models/09_pretrained_vit_feature_extrctor_pizza_steak_sushi_20_percent.pth
 
 data/food-101/
+
+.gradio
