@@ -1,0 +1,27 @@
+# For speedup
+torch.compile()
+
+# For checking compute capability score of your gpu
+torch.cuda.get_device_capability() 8.0 or higher for newer GPUs
+
+# Set the default device with context manager
+device = "cuda" if torch.cuda.is_available() else "cpu"
+with torch.device(device):
+	# All tensors or whatever created in this block will be on device
+	# No need to use .to(device) anymore
+
+# Set the default device globally -- means anything created w/o an explicit device will be created on this device by default
+torch.set_default_device(device)
+
+**(relative) Speedups are the biggest when more of the GPU is being used (as much data on GPU as possible)**
+
+# To check the memory limits of your GPU
+torch.cuda.mem_get_info() -- Bigger the GPU memory, more of things can be done at a faster pace.
+
+# More potential speedups can be achieved by using TensorFloat-32 (TF32) on GPUs with 8.0 or higher scores.
+TF32 can be enabled using torch.backends.cuda.matmul.allow_tf32 = True
+
+**Generally, Data Loading as in, transfer speed of data from CPU to GPU is the main bottleneck.**
+
+The goal is to get data to the GPU as fast as possible.
+
